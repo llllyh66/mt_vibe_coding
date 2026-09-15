@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#10283f" />
+    <meta
+      name="description"
+      content="合租生活管家：一起管好费用、值日、公共物品和室友公约。"
+    />
+    <link
+      rel="icon"
+      type="image/svg+xml"
+      href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='15' fill='%2310283f'/%3E%3Cpath d='M13 31 32 15l19 16v20H38V38H26v13H13V31Z' fill='%233dd6b1'/%3E%3Cpath d='M45 20v-6h7v12' fill='%23ff866e'/%3E%3C/svg%3E"
+    />
+    <title>同住｜合租生活管家</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <aside class="sidebar" aria-label="主导航">
+        <a class="brand" href="#home" aria-label="同住首页">
+          <span class="brand-mark" aria-hidden="true">
+            <svg viewBox="0 0 32 32"><path d="M4 15.2 16 5l12 10.2V27h-8.2v-8H12v8H4V15.2Z"/><path class="brand-chimney" d="M23.5 8V4h4v7.3"/></svg>
+          </span>
+          <span><strong>同住</strong><small>生活管家</small></span>
+        </a>
+
+        <nav class="nav-list">
+          <a href="#home" data-nav="home" class="nav-item active">
+            <span class="nav-icon" aria-hidden="true">⌂</span><span>首页</span>
+          </a>
+          <a href="#expenses" data-nav="expenses" class="nav-item">
+            <span class="nav-icon" aria-hidden="true">¥</span><span>费用</span>
+          </a>
+          <a href="#chores" data-nav="chores" class="nav-item">
+            <span class="nav-icon" aria-hidden="true">✓</span><span>值日</span>
+          </a>
+          <a href="#supplies" data-nav="supplies" class="nav-item">
+            <span class="nav-icon" aria-hidden="true">□</span><span>物品</span>
+          </a>
+          <a href="#agreements" data-nav="agreements" class="nav-item">
+            <span class="nav-icon" aria-hidden="true">§</span><span>公约</span>
+          </a>
+        </nav>
+
+        <div class="sidebar-foot">
+          <div class="house-card">
+            <span class="house-emoji" aria-hidden="true">🏠</span>
+            <div><strong>快乐合租屋</strong><span>上海 · 4 位室友</span></div>
+          </div>
+          <button class="member-switch" id="memberSwitch" type="button" aria-haspopup="listbox">
+            <span class="avatar avatar-green">青</span>
+            <span><small>当前视角</small><strong id="currentMemberName">阿青</strong></span>
+            <span class="chevron">⌄</span>
+          </button>
+          <div class="member-menu" id="memberMenu" role="listbox" aria-label="切换成员"></div>
+        </div>
+      </aside>
+
+      <main class="main-content" id="mainContent" tabindex="-1">
+        <header class="mobile-header">
+          <a class="brand" href="#home">
+            <span class="brand-mark" aria-hidden="true">
+              <svg viewBox="0 0 32 32"><path d="M4 15.2 16 5l12 10.2V27h-8.2v-8H12v8H4V15.2Z"/><path class="brand-chimney" d="M23.5 8V4h4v7.3"/></svg>
+            </span>
+            <span><strong>同住</strong><small>快乐合租屋</small></span>
+          </a>
+          <button class="avatar avatar-green mobile-avatar" id="mobileMemberSwitch" aria-label="切换当前成员">青</button>
+        </header>
+
+        <section class="view active" id="view-home" data-view="home"></section>
+        <section class="view" id="view-expenses" data-view="expenses"></section>
+        <section class="view" id="view-chores" data-view="chores"></section>
+        <section class="view" id="view-supplies" data-view="supplies"></section>
+        <section class="view" id="view-agreements" data-view="agreements"></section>
+      </main>
+
+      <nav class="mobile-nav" aria-label="移动端主导航">
+        <a href="#home" data-nav="home" class="active"><span aria-hidden="true">⌂</span><small>首页</small></a>
+        <a href="#expenses" data-nav="expenses"><span aria-hidden="true">¥</span><small>费用</small></a>
+        <a href="#chores" data-nav="chores"><span aria-hidden="true">✓</span><small>值日</small></a>
+        <a href="#supplies" data-nav="supplies"><span aria-hidden="true">□</span><small>物品</small></a>
+        <a href="#agreements" data-nav="agreements"><span aria-hidden="true">§</span><small>公约</small></a>
+      </nav>
+    </div>
+
+    <div class="modal-backdrop" id="modalBackdrop" hidden>
+      <section class="modal" id="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle"></section>
+    </div>
+    <div class="toast-region" id="toastRegion" aria-live="polite" aria-atomic="true"></div>
+    <script src="./app.js"></script>
+  </body>
+</html>

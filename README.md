@@ -22,3 +22,13 @@
 
 - [详细技术方案](docs/TECHNICAL_DESIGN.md)
 - [任务拆解与实施计划](docs/TASK_BREAKDOWN.md)
+
+## 本地预览
+
+这是一个无需构建步骤的静态 Web 应用，直接启动任意静态文件服务器即可：
+
+```bash
+python3 -m http.server 4173 --directory dist
+```
+
+然后访问 `http://localhost:4173`。演示数据保存在浏览器 `localStorage` 中，可在首页一键重置。
